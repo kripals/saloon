@@ -69,6 +69,23 @@ class BackendMenuCreator
             ]
         ]);
 
+        array_push($menu, [
+            'class' => 'gui-folder',
+            'route' => 'javascript:void(0);',
+            'icon'  => 'md md-people',
+            'title' => 'Clients',
+            'items' => [
+                [
+                    'route' => route('client.index'),
+                    'title' => 'List'
+                ],
+                [
+                    'route' => route('client.create'),
+                    'title' => 'Create'
+                ]
+            ]
+        ]);
+
         $view->with('allMenu', $menu);
     }
 }

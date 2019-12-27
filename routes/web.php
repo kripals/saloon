@@ -25,6 +25,15 @@ Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
         Route::delete('{branch}', 'BranchController@destroy')->name('destroy');
     });
 
+    Route::group([ 'as' => 'client.', 'prefix' => 'client' ], function () {
+        Route::get('', 'ClientController@index')->name('index');
+        Route::get('create', 'ClientController@create')->name('create');
+        Route::post('store', 'ClientController@store')->name('store');
+        Route::put('{client}', 'ClientController@update')->name('update');
+        Route::get('{client}/edit', 'ClientController@edit')->name('edit');
+        Route::delete('{client}', 'ClientController@destroy')->name('destroy');
+    });
+
     Route::group([ 'as' => 'user.', 'prefix' => 'user' ], function () {
         Route::get('', 'UserController@index')->name('index');
         Route::get('create', 'UserController@create')->name('create');
