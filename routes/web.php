@@ -43,6 +43,15 @@ Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
         Route::delete('{employee}', 'EmployeeController@destroy')->name('destroy');
     });
 
+    Route::group([ 'as' => 'service.', 'prefix' => 'service' ], function () {
+        Route::get('', 'ServiceController@index')->name('index');
+        Route::get('create', 'ServiceController@create')->name('create');
+        Route::post('store', 'ServiceController@store')->name('store');
+        Route::put('{service}', 'ServiceController@update')->name('update');
+        Route::get('{service}/edit', 'ServiceController@edit')->name('edit');
+        Route::delete('{service}', 'ServiceController@destroy')->name('destroy');
+    });
+
     Route::group([ 'as' => 'user.', 'prefix' => 'user' ], function () {
         Route::get('', 'UserController@index')->name('index');
         Route::get('create', 'UserController@create')->name('create');

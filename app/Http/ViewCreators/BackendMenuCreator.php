@@ -103,6 +103,23 @@ class BackendMenuCreator
             ]
         ]);
 
+        array_push($menu, [
+            'class' => 'gui-folder',
+            'route' => 'javascript:void(0);',
+            'icon'  => 'md md-people',
+            'title' => 'Services',
+            'items' => [
+                [
+                    'route' => route('service.index'),
+                    'title' => 'List'
+                ],
+                [
+                    'route' => route('service.create'),
+                    'title' => 'Create'
+                ]
+            ]
+        ]);
+
         $view->with('allMenu', $menu);
     }
 }
