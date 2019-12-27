@@ -16,13 +16,15 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::text('first_name',old('first_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('first_name','First Name') }}
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::number('last_name',old('last_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('last_name','Last Name') }}
@@ -30,20 +32,34 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::text('mobile_number',old('mobile_number'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('mobile_number','Mobile Number') }}
+                            {{ Form::text('in_time',old('in_time'),['class'=>'form-control', 'required']) }}
+                            {{ Form::label('in_time','In Time') }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{ Form::text('out_time',old('out_time'),['class'=>'form-control', 'required']) }}
+                            {{ Form::label('out_time','Out Time') }}
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{ Form::text('phone_number',old('phone_number'),['class'=>'form-control', 'required']) }}
+                            {{ Form::label('phone_number','Phone Number') }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="form-group">
                             {{ Form::text('address',old('address'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('address','Address') }}
                         </div>
                     </div>
+                </div>
+                <div class="row">
                 </div>
             </div>
             <div class="card-actionbar">

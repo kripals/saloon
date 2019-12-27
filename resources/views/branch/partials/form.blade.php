@@ -34,13 +34,13 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::email('open_time',old('open_time'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('open_time',old('open_time'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('open_time','Open Time') }}
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::email('close_time',old('close_time'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('close_time',old('close_time'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('close_time','Close Time') }}
                         </div>
                     </div>

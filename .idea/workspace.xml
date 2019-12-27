@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cff7b53-b8dc-4c89-b5de-b6b6d45175a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/branch/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/branch/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +170,7 @@
       <workItem from="1577116850036" duration="3228000" />
       <workItem from="1577205779725" duration="1215000" />
       <workItem from="1577246161780" duration="716000" />
-      <workItem from="1577428301774" duration="16480000" />
+      <workItem from="1577428301774" duration="17237000" />
     </task>
     <servers />
   </component>
