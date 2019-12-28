@@ -59,6 +59,5 @@ Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
         Route::put('{user}', 'UserController@update')->name('update');
         Route::get('{user}/edit', 'UserController@edit')->name('edit');
         Route::delete('{user}', 'UserController@destroy')->name('destroy');
-        Route::put('{user}/publish', 'UserController@publishUpdate')->name('publish');
     });
 });
