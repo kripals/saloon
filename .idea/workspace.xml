@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0cff7b53-b8dc-4c89-b5de-b6b6d45175a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,12 +122,12 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\workspace\saloon\app\Model" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\workspace\saloon\resources\views" />
       <recent name="E:\Projects\workspace\saloon\public\material" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\workspace\saloon\app\Model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -174,7 +174,9 @@
       <workItem from="1577116850036" duration="3228000" />
       <workItem from="1577205779725" duration="1215000" />
       <workItem from="1577246161780" duration="716000" />
-      <workItem from="1577428301774" duration="24154000" />
+      <workItem from="1577428301774" duration="24316000" />
+      <workItem from="1577523276703" duration="7674000" />
+      <workItem from="1577590458392" duration="1584000" />
     </task>
     <servers />
   </component>
@@ -186,7 +188,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -137,6 +137,23 @@ class BackendMenuCreator
             ]
         ]);
 
+        array_push($menu, [
+            'class' => 'gui-folder',
+            'route' => 'javascript:void(0);',
+            'icon'  => 'md md-people',
+            'title' => 'Appointment',
+            'items' => [
+                [
+                    'route' => route('appointment.index'),
+                    'title' => 'List'
+                ],
+                [
+                    'route' => route('appointment.create'),
+                    'title' => 'Create'
+                ]
+            ]
+        ]);
+
         $view->with('allMenu', $menu);
     }
 }

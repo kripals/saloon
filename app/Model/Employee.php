@@ -17,6 +17,24 @@ class Employee extends Model
     ];
 
     /**
+     * The attributes appended in the JSON form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'name'
+    ];
+
+    /**
+     * Append display name to JSON form
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return ucwords($this->first_name) . ' ' . ucwords($this->last_name);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function appointment()
