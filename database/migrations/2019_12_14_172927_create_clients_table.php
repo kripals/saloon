@@ -20,6 +20,11 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->string('mobile_number');
             $table->string('address');
+            $table->integer('branch_id')->unsigned()->index();
+            $table->foreign('branch_id')
+                ->references('id')
+                ->on('branches')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

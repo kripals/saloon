@@ -23,6 +23,11 @@ class CreateEmployeesTable extends Migration
             $table->string('phone_number');
             $table->string('address');
             $table->dateTime('hired_date');
+            $table->integer('branch_id')->unsigned()->index();
+            $table->foreign('branch_id')
+                ->references('id')
+                ->on('branches')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

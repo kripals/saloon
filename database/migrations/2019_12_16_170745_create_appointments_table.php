@@ -21,6 +21,11 @@ class CreateAppointmentsTable extends Migration
             $table->integer('employee_id')->unsigned()->index();
             $table->dateTime('time');
             $table->integer('duration');
+            $table->integer('branch_id')->unsigned()->index();
+            $table->foreign('branch_id')
+                ->references('id')
+                ->on('branches')
+                ->onDelete('cascade');
             $table->foreign('client_id')
                 ->references('id')
                 ->on('clients')

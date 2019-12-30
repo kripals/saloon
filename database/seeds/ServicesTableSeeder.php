@@ -21,7 +21,8 @@ class ServicesTableSeeder extends Seeder
         \App\Model\Service::create([
             'name'     => 'Hair cutting',
             'cost_per' => 'Per cut',
-            'price'    => 600
+            'price'    => 600,
+            'branch_id' => 1
         ]);
     }
 }
