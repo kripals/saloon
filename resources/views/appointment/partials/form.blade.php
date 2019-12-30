@@ -38,13 +38,13 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::select('client', $clients, isset($appointment) ? $appointment->client->id : old('client'), ['class' => 'form-control', 'required']) }}
+                            {{ Form::select('client', $clients, isset($appointment) ? $appointment->client->id : old('client'), ['class' => 'form-control select2-list', 'required']) }}
                             {{ Form::label('client', 'Client') }}
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::select('service', $services, isset($appointment) ? $appointment->service->id : old('service'), ['class' => 'form-control', 'required']) }}
+                            {{ Form::select('service', $services, isset($appointment) ? $appointment->service->id : old('service'), ['class' => 'form-control select2-list', 'required']) }}
                             {{ Form::label('service', 'Service') }}
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::select('employee', $employees, isset($appointment) ? $appointment->employee->id : old('employee'), ['class' => 'form-control', 'required']) }}
+                            {{ Form::select('employee', $employees, isset($appointment) ? $appointment->employee->id : old('employee'), ['class' => 'form-control select2-list', 'required']) }}
                             {{ Form::label('employee', 'Employee') }}
                         </div>
                     </div>

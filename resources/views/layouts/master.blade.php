@@ -19,6 +19,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('material/css/material-design-iconic-font.min.css') }}"/>
     <link type="text/css" rel="stylesheet"
           href="{{ asset('material/css/material-design-iconic-font.min.css') }}"/>
+    <link href="{{ asset('material/css/libs/select2/select2.css') }}" rel="stylesheet">
     <!-- END STYLESHEETS -->
 
     <!-- PAGE LEVEL STYLESHEETS -->
@@ -72,6 +73,7 @@
 <script src="{{ asset('material/js/core/demo/Demo.js') }}"></script>
 <script src="{{ asset('material/js/core/demo/DemoLayouts.js') }}"></script>
 <script src="{{ asset('material/js/libs/inputmask/jquery.inputmask.bundle.min.js') }}"></script>
+<script src="{{ asset('material/js/libs/select2/select2.min.js') }}"></script>
 
 <script>
     $(document).ready(function () {
@@ -82,11 +84,14 @@
             separator: "-",
             alias: "yyyy-mm-dd"
         });
+
         $(".time-picker").inputmask({
             placeholder: "hh:mm",
             separator: "-",
             alias: "hh:mm"
         });
+
+        $('.select2-list').select2();
     })
 </script>
 <!-- END JAVASCRIPT -->

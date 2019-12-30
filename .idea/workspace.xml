@@ -3,24 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0cff7b53-b8dc-4c89-b5de-b6b6d45175a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreAppointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEmployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEmployee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateAppointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateEmployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateEmployee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Feedback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointment/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointment/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/form.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +175,7 @@
       <workItem from="1577428301774" duration="24316000" />
       <workItem from="1577523276703" duration="7674000" />
       <workItem from="1577590458392" duration="9612000" />
-      <workItem from="1577723512051" duration="3950000" />
+      <workItem from="1577723512051" duration="4470000" />
     </task>
     <servers />
   </component>

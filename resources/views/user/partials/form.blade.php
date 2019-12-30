@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::select('branch', $branches, isset($user) ? $user->branch->id : old('branch'), ['class' => 'form-control', 'required']) }}
+                            {{ Form::select('branch', $branches, isset($user) ? $user->branch->id : old('branch'), ['class' => 'form-control select2-list', 'required']) }}
                             {{ Form::label('branch', 'Branch') }}
                         </div>
                     </div>
