@@ -16,16 +16,22 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
-                            {{ Form::text('time',old('time'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('date',old('date'),['class'=>'form-control date-picker', 'required']) }}
+                            {{ Form::label('date','Date') }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ Form::text('time',old('time'),['class'=>'form-control time-picker', 'required']) }}
                             {{ Form::label('time','Time') }}
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             {{ Form::number('duration',old('duration'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('duration','Duration') }}
+                            {{ Form::label('duration','Duration In Hrs') }}
                         </div>
                     </div>
                 </div>

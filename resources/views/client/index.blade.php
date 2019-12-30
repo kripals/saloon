@@ -20,10 +20,10 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="30%" class="text-left">First Name</th>
+                            <th width="20%" class="text-left">First Name</th>
                             <th width="20%" class="text-left">Last Name</th>
                             <th width="20%" class="text-left">Mobile Number</th>
-                            <th width="15%" class="text-right">Address</th>
+                            <th width="20%" class="text-left">Address</th>
                         </tr>
                         </thead>
                         <tbody>

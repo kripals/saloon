@@ -47,15 +47,6 @@ class EmployeeController extends Controller
      * @param Employee $employee
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Employee $employee)
-    {
-        return view('employee.show',compact('employee'));
-    }
-
-    /**
-     * @param Employee $employee
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function edit(Employee $employee)
     {
         return view('employee.edit',compact('employee'));

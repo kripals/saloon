@@ -29,7 +29,8 @@ class UpdateEmployee extends FormRequest
             "in_time"      => 'required',
             "out_time"     => 'required',
             "phone_number" => 'required',
-            "address"      => 'required'
+            "address"      => 'required',
+            "hired_date"   => 'required',
         ];
     }
 
@@ -44,7 +45,8 @@ class UpdateEmployee extends FormRequest
             'in_time'      => $this->get('in_time'),
             'out_time'     => $this->get('out_time'),
             'phone_number' => $this->get('phone_number'),
-            'address'      => $this->get('address')
+            'address'      => $this->get('address'),
+            'hired_date'   => $this->get('hired_date')
         ];
     }
 }

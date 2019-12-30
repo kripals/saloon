@@ -21,6 +21,10 @@
           href="{{ asset('material/css/material-design-iconic-font.min.css') }}"/>
     <!-- END STYLESHEETS -->
 
+    <!-- PAGE LEVEL STYLESHEETS -->
+    @stack('styles')
+    <!-- END PAGE LEVEL STYLESHEETS -->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{ asset('material/js/libs/utils/html5shiv.js') }}"></script>
@@ -67,7 +71,29 @@
 <script src="{{ asset('material/js/core/source/AppVendor.js') }}"></script>
 <script src="{{ asset('material/js/core/demo/Demo.js') }}"></script>
 <script src="{{ asset('material/js/core/demo/DemoLayouts.js') }}"></script>
+<script src="{{ asset('material/js/libs/inputmask/jquery.inputmask.bundle.min.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".date-picker").inputmask({
+            mask: "y-1-2",
+            placeholder: "yyyy-mm-dd",
+            leapday: "-02-29",
+            separator: "-",
+            alias: "yyyy-mm-dd"
+        });
+        $(".time-picker").inputmask({
+            placeholder: "hh:mm",
+            separator: "-",
+            alias: "hh:mm"
+        });
+    })
+</script>
 <!-- END JAVASCRIPT -->
+
+<!-- BEGIN PAGE LEVEL JAVASCRIPT -->
+@stack('scripts')
+<!-- END PAGE LEVEL JAVASCRIPT -->
 
 </body>
 </html>

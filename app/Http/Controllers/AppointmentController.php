@@ -54,15 +54,6 @@ class AppointmentController extends Controller
      * @param Appointment $appointment
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Appointment $appointment)
-    {
-        return view('appointment.show', compact('appointment'));
-    }
-
-    /**
-     * @param Appointment $appointment
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function edit(Appointment $appointment)
     {
         $services  = Service::pluck('name', 'id');

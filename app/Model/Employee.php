@@ -13,7 +13,12 @@ class Employee extends Model
         'in_time',
         'out_time',
         'phone_number',
-        'address'
+        'address',
+        'hired_date'
+    ];
+
+    protected $dates = [
+        'hired_date'
     ];
 
     /**

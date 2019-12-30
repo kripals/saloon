@@ -20,12 +20,12 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="30%" class="text-left">First Name</th>
-                            <th width="20%" class="text-left">Last Name</th>
-                            <th width="20%" class="text-left">In Time</th>
-                            <th width="15%" class="text-right">Out Time</th>
-                            <th width="15%" class="text-right">Phone Number</th>
-                            <th width="15%" class="text-right">Address</th>
+                            <th width="15%" class="text-left">First Name</th>
+                            <th width="15%" class="text-left">Last Name</th>
+                            <th width="15%" class="text-left">In Time</th>
+                            <th width="15%" class="text-left">Out Time</th>
+                            <th width="15%" class="text-left">Phone Number</th>
+                            <th width="15%" class="text-left">Address</th>
                         </tr>
                         </thead>
                         <tbody>

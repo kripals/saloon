@@ -21,9 +21,9 @@
                         <tr>
                             <th width="5%">#</th>
                             <th width="30%" class="text-left">Location</th>
-                            <th width="20%" class="text-left">Phone Number</th>
-                            <th width="20%" class="text-left">Open Time</th>
-                            <th width="15%" class="text-right">Close Time</th>
+                            <th width="15%" class="text-left">Phone Number</th>
+                            <th width="15%" class="text-left">Open Time</th>
+                            <th width="15%" class="text-left">Close Time</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -27,6 +27,7 @@ class UpdateAppointment extends FormRequest
             "client"   => 'required',
             "service"  => 'required',
             "employee" => 'required',
+            "date"     => 'required',
             "time"     => 'required',
             "duration" => 'required'
         ];
@@ -41,7 +42,7 @@ class UpdateAppointment extends FormRequest
             'client_id'   => $this->get('client'),
             'service_id'  => $this->get('service'),
             'employee_id' => $this->get('employee'),
-            'time'        => $this->get('time'),
+            'time'        => $this->get('date') . $this->get('time') . ":00",
             'duration'    => $this->get('duration'),
         ];
     }

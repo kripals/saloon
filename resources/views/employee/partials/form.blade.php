@@ -16,17 +16,15 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             {{ Form::text('first_name',old('first_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('first_name','First Name') }}
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::number('last_name',old('last_name'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('last_name',old('last_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('last_name','Last Name') }}
                         </div>
                     </div>
@@ -34,14 +32,14 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::text('in_time',old('in_time'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('in_time','In Time') }}
+                            {{ Form::text('in_time',old('in_time'),['class'=>'form-control time-picker', 'required']) }}
+                            {{ Form::label('in_time','In Time (24 Hour Format)') }}
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::text('out_time',old('out_time'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('out_time','Out Time') }}
+                            {{ Form::text('out_time',old('out_time'),['class'=>'form-control time-picker', 'required']) }}
+                            {{ Form::label('out_time','Out Time (24 Hour Format)') }}
                         </div>
                     </div>
                 </div>
@@ -60,6 +58,12 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{ Form::text('hired_date',old('hired_date'),['class'=>'form-control date-picker', 'required']) }}
+                            {{ Form::label('hired_date','Hired Date') }}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-actionbar">

@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::number('last_name',old('last_name'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('last_name',old('last_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('last_name','Last Name') }}
                         </div>
                     </div>

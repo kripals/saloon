@@ -22,6 +22,7 @@ class CreateEmployeesTable extends Migration
             $table->string('out_time');
             $table->string('phone_number');
             $table->string('address');
+            $table->dateTime('hired_date');
             $table->timestamps();
         });
     }

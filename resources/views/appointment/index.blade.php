@@ -20,18 +20,18 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="30%" class="text-left">Time</th>
-                            <th width="20%" class="text-left">Duration</th>
-                            <th width="20%" class="text-left">Client</th>
-                            <th width="20%" class="text-left">Service</th>
-                            <th width="20%" class="text-left">Employee</th>
+                            <th width="15%" class="text-left">Time</th>
+                            <th width="15%" class="text-left">Duration (Hrs)</th>
+                            <th width="15%" class="text-left">Client</th>
+                            <th width="15%" class="text-left">Service</th>
+                            <th width="15%" class="text-left">Employee</th>
                         </tr>
                         </thead>
                         <tbody>
                         @forelse($appointments as $key => $appointment)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{ $appointment->time }}</td>
+                                <td>{{ $appointment->appointment }}</td>
                                 <td>{{ $appointment->duration }}</td>
                                 <td>{{ $appointment->client->name }}</td>
                                 <td>{{ $appointment->service->name }}</td>
