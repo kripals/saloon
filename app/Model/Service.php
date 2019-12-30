@@ -10,7 +10,8 @@ class Service extends Model
         'id',
         'name',
         'cost_per',
-        'price'
+        'price',
+        'branch_id'
     ];
 
     /**
@@ -19,5 +20,13 @@ class Service extends Model
     public function appointment()
     {
         return $this->hasMany(Appointment::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

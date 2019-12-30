@@ -10,6 +10,15 @@ class Feedback extends Model
         'id',
         'name',
         'phone',
-        'feedback'
+        'feedback',
+        'branch_id'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
 }

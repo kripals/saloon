@@ -14,6 +14,7 @@ class Appointment extends Model
         'employee_id',
         'time',
         'duration',
+        'branch_id'
     ];
 
     /**
@@ -59,5 +60,13 @@ class Appointment extends Model
     public function employee()
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

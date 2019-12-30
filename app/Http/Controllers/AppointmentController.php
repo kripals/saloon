@@ -18,7 +18,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments = Appointment::all();
+        $appointments = Appointment::where('branch_id', auth()->user()->branch_id)->get();
 
         return view('appointment.index', compact('appointments'));
     }
@@ -28,9 +28,9 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        $services  = Service::pluck('name', 'id');
-        $clients   = Client::all()->pluck('name', 'id');
-        $employees = Employee::all()->pluck('name', 'id');
+        $services  = Service::where('branch_id', auth()->user()->branch_id)->pluck('name', 'id');
+        $clients   = Client::where('branch_id', auth()->user()->branch_id)->get()->pluck('name', 'id');
+        $employees = Employee::where('branch_id', auth()->user()->branch_id)->get()->pluck('name', 'id');
 
         return view('appointment.create', compact('services', 'clients', 'employees'));
     }
@@ -56,27 +56,41 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        $services  = Service::pluck('name', 'id');
-        $clients   = Client::all()->pluck('name', 'id');
-        $employees = Employee::all()->pluck('name', 'id');
+        if ($appointment->branch_id == auth()->user()->branch_id)
+        {
+            $services  = Service::where('branch_id', auth()->user()->branch_id)->pluck('name', 'id');
+            $clients   = Client::where('branch_id', auth()->user()->branch_id)->get()->pluck('name', 'id');
+            $employees = Employee::where('branch_id', auth()->user()->branch_id)->get()->pluck('name', 'id');
 
-        return view('appointment.edit', compact('appointment', 'services', 'clients', 'employees'));
+            return view('appointment.edit', compact('appointment', 'services', 'clients', 'employees'));
+        }
+        else
+        {
+            return view('appointment.index');
+        }
     }
 
-    /**
+    /**w
      * @param UpdateAppointment $request
      * @param Appointment $appointment
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateAppointment $request, Appointment $appointment)
     {
-        DB::transaction(function () use ($request, $appointment) {
-            $data = $request->data();
+        if ($appointment->branch_id == auth()->user()->branch_id)
+        {
+            DB::transaction(function () use ($request, $appointment) {
+                $data = $request->data();
 
-            $appointment->update($data);
-        });
+                $appointment->update($data);
+            });
 
-        return redirect()->route('appointment.index')->with('success', trans('messages.update_success', [ 'entity' => 'Appointment' ]));
+            return redirect()->route('appointment.index')->with('success', trans('messages.update_success', [ 'entity' => 'Appointment' ]));
+        }
+        else
+        {
+            return redirect()->route('appointment.index')->with('warning', trans('messages.update_success', [ 'entity' => 'Appointment' ]));
+        }
     }
 
     /**

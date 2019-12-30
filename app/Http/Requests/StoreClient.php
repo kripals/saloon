@@ -40,7 +40,8 @@ class StoreClient extends FormRequest
             'first_name'    => $this->get('first_name'),
             'last_name'     => $this->get('last_name'),
             'mobile_number' => $this->get('mobile_number'),
-            'address'       => $this->get('address')
+            'address'       => $this->get('address'),
+            'branch_id'     => auth()->user()->branch_id
         ];
     }
 }

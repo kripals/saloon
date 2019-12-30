@@ -44,6 +44,7 @@ class StoreAppointment extends FormRequest
             'employee_id' => $this->get('employee'),
             'time'        => $this->get('date') . " " . $this->get('time') . ":00",
             'duration'    => $this->get('duration'),
+            'branch_id'     => auth()->user()->branch_id
         ];
     }
 }

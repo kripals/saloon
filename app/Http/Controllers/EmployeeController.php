@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
+        $employees = Employee::where('branch_id', auth()->user()->branch_id)->get();
 
         return view('employee.index', compact('employees'));
     }
@@ -34,12 +34,12 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployee $request)
     {
-        DB::transaction(function () use ($request)
-        {
+        DB::transaction(function () use ($request) {
             $data = $request->data();
 
             $employee = Employee::create($data);
         });
+
         return redirect()->route('employee.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Employee' ]));
     }
 
@@ -49,7 +49,14 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        return view('employee.edit',compact('employee'));
+        if ($employee->branch_id == auth()->user()->branch_id)
+        {
+            return view('employee.edit', compact('employee'));
+        }
+        else
+        {
+            return view('employee.index');
+        }
     }
 
     /**
@@ -59,14 +66,20 @@ class EmployeeController extends Controller
      */
     public function update(UpdateEmployee $request, Employee $employee)
     {
-        DB::transaction(function () use ($request, $employee)
+        if ($employee->branch_id == auth()->user()->branch_id)
         {
-            $data = $request->data();
+            DB::transaction(function () use ($request, $employee) {
+                $data = $request->data();
 
-            $employee->update($data);
-        });
+                $employee->update($data);
+            });
 
-        return redirect()->route('employee.index')->with('success', trans('messages.update_success', ['entity' => 'Employee']));
+            return redirect()->route('employee.index')->with('success', trans('messages.update_success', [ 'entity' => 'Employee' ]));
+        }
+        else
+        {
+            return redirect()->route('employee.index')->with('warning', trans('messages.update_success', [ 'entity' => 'Employee' ]));
+        }
     }
 
     /**

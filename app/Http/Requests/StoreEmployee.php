@@ -46,7 +46,8 @@ class StoreEmployee extends FormRequest
             'out_time'     => $this->get('out_time'),
             'phone_number' => $this->get('phone_number'),
             'address'      => $this->get('address'),
-            'hired_date'   => $this->get('hired_date')
+            'hired_date'   => $this->get('hired_date'),
+            'branch_id'     => auth()->user()->branch_id
         ];
     }
 }

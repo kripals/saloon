@@ -11,7 +11,8 @@ class Client extends Model
         'first_name',
         'last_name',
         'mobile_number',
-        'address'
+        'address',
+        'branch_id'
     ];
 
     /**
@@ -38,5 +39,13 @@ class Client extends Model
     public function appointment()
     {
         return $this->hasMany(Appointment::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

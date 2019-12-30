@@ -14,7 +14,8 @@ class Employee extends Model
         'out_time',
         'phone_number',
         'address',
-        'hired_date'
+        'hired_date',
+        'branch_id'
     ];
 
     protected $dates = [
@@ -45,5 +46,13 @@ class Employee extends Model
     public function appointment()
     {
         return $this->hasMany(Appointment::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

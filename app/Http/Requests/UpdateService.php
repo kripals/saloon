@@ -38,7 +38,8 @@ class UpdateService extends FormRequest
         return $data = [
             'name'     => $this->get('name'),
             'cost_per' => $this->get('cost_per'),
-            'price'    => $this->get('price')
+            'price'    => $this->get('price'),
+            'branch_id'     => auth()->user()->branch_id
         ];
     }
 }

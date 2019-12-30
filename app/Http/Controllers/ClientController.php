@@ -15,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::where('branch_id', auth()->user()->branch_id)->get();
 
         return view('client.index', compact('clients'));
     }
@@ -34,22 +34,13 @@ class ClientController extends Controller
      */
     public function store(StoreClient $request)
     {
-        DB::transaction(function () use ($request)
-        {
+        DB::transaction(function () use ($request) {
             $data = $request->data();
 
             $client = Client::create($data);
         });
-        return redirect()->route('client.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Client' ]));
-    }
 
-    /**
-     * @param Client $client
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function show(Client $client)
-    {
-        return view('client.show',compact('client'));
+        return redirect()->route('client.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Client' ]));
     }
 
     /**
@@ -58,7 +49,14 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        return view('client.edit',compact('client'));
+        if ($client->branch_id == auth()->user()->branch_id)
+        {
+            return view('client.edit', compact('client'));
+        }
+        else
+        {
+            return view('client.index');
+        }
     }
 
     /**
@@ -68,14 +66,20 @@ class ClientController extends Controller
      */
     public function update(UpdateClient $request, Client $client)
     {
-        DB::transaction(function () use ($request, $client)
+        if ($client->branch_id == auth()->user()->branch_id)
         {
-            $data = $request->data();
+            DB::transaction(function () use ($request, $client) {
+                $data = $request->data();
 
-            $client->update($data);
-        });
+                $client->update($data);
+            });
 
-        return redirect()->route('client.index')->with('success', trans('messages.update_success', ['entity' => 'Client']));
+            return redirect()->route('client.index')->with('success', trans('messages.update_success', [ 'entity' => 'Client' ]));
+        }
+        else
+        {
+            return redirect()->route('client.index')->with('warning', trans('messages.update_success', [ 'entity' => 'Client' ]));
+        }
     }
 
     /**

@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('branch_id', auth()->user()->branch_id)->get();
 
         return view('service.index', compact('services'));
     }
@@ -33,12 +33,12 @@ class ServiceController extends Controller
      */
     public function store(StoreService $request)
     {
-        DB::transaction(function () use ($request)
-        {
+        DB::transaction(function () use ($request) {
             $data = $request->data();
 
             $service = Service::create($data);
         });
+
         return redirect()->route('service.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Service' ]));
     }
 
@@ -48,7 +48,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('service.show',compact('service'));
+        return view('service.show', compact('service'));
     }
 
     /**
@@ -57,7 +57,14 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('service.edit',compact('service'));
+        if ($service->branch_id == auth()->user()->branch_id)
+        {
+            return view('service.edit', compact('service'));
+        }
+        else
+        {
+            return view('service.index');
+        }
     }
 
     /**
@@ -67,14 +74,20 @@ class ServiceController extends Controller
      */
     public function update(UpdateService $request, Service $service)
     {
-        DB::transaction(function () use ($request, $service)
+        if ($service->branch_id == auth()->user()->branch_id)
         {
-            $data = $request->data();
+            DB::transaction(function () use ($request, $service) {
+                $data = $request->data();
 
-            $service->update($data);
-        });
+                $service->update($data);
+            });
 
-        return redirect()->route('service.index')->with('success', trans('messages.update_success', ['entity' => 'Service']));
+            return redirect()->route('service.index')->with('success', trans('messages.update_success', [ 'entity' => 'Service' ]));
+        }
+        else
+        {
+            return redirect()->route('service.index')->with('warning', trans('messages.update_success', [ 'entity' => 'Service' ]));
+        }
     }
 
     /**

@@ -16,10 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users    = User::all();
-        $branches = Branch::all();
+        $users = User::where('branch_id', auth()->user()->branch_id)->get();
 
-        return view('user.index', compact('users', 'branches'));
+        return view('user.index', compact('users'));
     }
 
     /**
@@ -27,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $branches = Branch::pluck('location', 'id');
+        $branches = Branch::where('id', auth()->user()->branch_id)->pluck('location', 'id');
 
         return view('user.create', compact('branches'));
     }
@@ -62,9 +61,16 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $branches = Branch::pluck('location', 'id');
+        if ($user->branch_id == auth()->user()->branch_id)
+        {
+            $branches = Branch::where('id', auth()->user()->branch_id)->pluck('location', 'id');
 
-        return view('user.edit', compact('user', 'branches'));
+            return view('user.edit', compact('user', 'branches'));
+        }
+        else
+        {
+            return view('user.index');
+        }
     }
 
     /**
@@ -74,13 +80,20 @@ class UserController extends Controller
      */
     public function update(UpdateUser $request, User $user)
     {
-        DB::transaction(function () use ($request, $user) {
-            $data = $request->data();
+        if ($user->branch_id == auth()->user()->branch_id)
+        {
+            DB::transaction(function () use ($request, $user) {
+                $data = $request->data();
 
-            $user->update($data);
-        });
+                $user->update($data);
+            });
 
-        return redirect()->route('user.index')->with('success', trans('messages.update_success', [ 'entity' => 'User' ]));
+            return redirect()->route('user.index')->with('success', trans('messages.update_success', [ 'entity' => 'User' ]));
+        }
+        else
+        {
+            return redirect()->route('user.index')->with('warning', trans('messages.update_success', [ 'entity' => 'User' ]));
+        }
     }
 
     /**
