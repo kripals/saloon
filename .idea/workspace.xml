@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cff7b53-b8dc-4c89-b5de-b6b6d45175a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/saloon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/saloon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_11_172705_create_branches_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_14_172816_create_employees_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_14_172927_create_clients_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_14_172939_create_services_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_16_170745_create_appointments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_16_170913_create_feedback_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointment/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/appointment/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointment/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partials/form.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +123,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/generators" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UyW0JsELl4ggKBzrMsN5w0zoEn" />
@@ -175,7 +193,10 @@
       <workItem from="1577428301774" duration="24316000" />
       <workItem from="1577523276703" duration="7674000" />
       <workItem from="1577590458392" duration="9612000" />
-      <workItem from="1577723512051" duration="4470000" />
+      <workItem from="1577723512051" duration="4568000" />
+      <workItem from="1577776001612" duration="5024000" />
+      <workItem from="1577850630550" duration="838000" />
+      <workItem from="1577974144914" duration="2726000" />
     </task>
     <servers />
   </component>

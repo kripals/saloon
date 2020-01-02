@@ -45,6 +45,7 @@ class AppointmentController extends Controller
             $data = $request->data();
 
             $appointment = Appointment::create($data);
+            $appointment->service()->sync($request->service);
         });
 
         return redirect()->route('appointment.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Appointment' ]));
@@ -83,6 +84,7 @@ class AppointmentController extends Controller
                 $data = $request->data();
 
                 $appointment->update($data);
+                $appointment->service()->sync($request->service);
             });
 
             return redirect()->route('appointment.index')->with('success', trans('messages.update_success', [ 'entity' => 'Appointment' ]));

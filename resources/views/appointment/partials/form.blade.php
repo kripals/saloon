@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            {{ Form::text('date',old('date'),['class'=>'form-control date-picker', 'required']) }}
+                            {{ Form::text('date', old('date'),['class'=>'form-control date-picker', 'required']) }}
                             {{ Form::label('date','Date') }}
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {{ Form::select('service', $services, isset($appointment) ? $appointment->service->id : old('service'), ['class' => 'form-control select2-list', 'required']) }}
+                            {{ Form::select('service[]', $services, isset($appointment) ? $appointment->service->pluck('id') : old('service'), ['class' => 'form-control select2-list', 'required', 'multiple' => 'multiple']) }}
                             {{ Form::label('service', 'Service') }}
                         </div>
                     </div>

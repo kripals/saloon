@@ -40,9 +40,9 @@ class UpdateAppointment extends FormRequest
     {
         return $data = [
             'client_id'   => $this->get('client'),
-            'service_id'  => $this->get('service'),
             'employee_id' => $this->get('employee'),
-            'time'        => $this->get('date') . $this->get('time') . ":00",
+            'date'        => $this->get('date'),
+            'time'        => $this->get('time') . ":00",
             'duration'    => $this->get('duration'),
             'branch_id'     => auth()->user()->branch_id
         ];

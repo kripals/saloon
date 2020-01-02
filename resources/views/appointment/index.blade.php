@@ -34,13 +34,21 @@
                                 <td>{{ $appointment->appointment }}</td>
                                 <td>{{ $appointment->duration }}</td>
                                 <td>{{ $appointment->client->name }}</td>
-                                <td>{{ $appointment->service->name }}</td>
+                                <td>
+                                    @foreach($appointment->service as $service)
+                                        {{ $service->name }}
+                                        <br>
+                                    @endforeach
+                                </td>
                                 <td>{{ $appointment->employee->name }}</td>
                                 <td class="text-right">
-                                    <a href="{{route('appointment.edit', $appointment->id)}}" class="btn btn-flat btn-primary btn-xs">
+                                    <a href="{{route('appointment.edit', $appointment->id)}}"
+                                       class="btn btn-flat btn-primary btn-xs">
                                         Edit
                                     </a>
-                                    <button type="button" data-url="{{ route('appointment.destroy', $appointment->id) }}" class="btn btn-flat btn-primary btn-xs item-delete">
+                                    <button type="button"
+                                            data-url="{{ route('appointment.destroy', $appointment->id) }}"
+                                            class="btn btn-flat btn-primary btn-xs item-delete">
                                         Delete
                                     </button>
                                 </td>

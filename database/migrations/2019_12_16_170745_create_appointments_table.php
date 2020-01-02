@@ -17,9 +17,9 @@ class CreateAppointmentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('client_id')->unsigned()->index();
-            $table->integer('service_id')->unsigned()->index();
             $table->integer('employee_id')->unsigned()->index();
-            $table->dateTime('time');
+            $table->date('date');
+            $table->time('time');
             $table->integer('duration');
             $table->integer('branch_id')->unsigned()->index();
             $table->foreign('branch_id')
@@ -29,10 +29,6 @@ class CreateAppointmentsTable extends Migration
             $table->foreign('client_id')
                 ->references('id')
                 ->on('clients')
-                ->onDelete('cascade');
-            $table->foreign('service_id')
-                ->references('id')
-                ->on('services')
                 ->onDelete('cascade');
             $table->foreign('employee_id')
                 ->references('id')

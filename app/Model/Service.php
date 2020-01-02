@@ -15,11 +15,11 @@ class Service extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function appointment()
     {
-        return $this->hasMany(Appointment::class);
+        return $this->belongsToMany(Appointment::class);
     }
 
     /**

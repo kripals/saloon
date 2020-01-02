@@ -10,8 +10,8 @@ class Appointment extends Model
     protected $fillable = [
         'id',
         'client_id',
-        'service_id',
         'employee_id',
+        'date',
         'time',
         'duration',
         'branch_id'
@@ -33,7 +33,7 @@ class Appointment extends Model
      */
     public function getAppointmentAttribute()
     {
-        $date = new DateTime($this->time);
+        $date = new DateTime($this->date);
 
         return $date->format('M d, Y, H:i');
     }
@@ -47,11 +47,11 @@ class Appointment extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function service()
     {
-        return $this->belongsTo(Service::class);
+        return $this->belongsToMany(Service::class);
     }
 
     /**
