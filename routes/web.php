@@ -69,4 +69,9 @@ Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
         Route::get('{appointment}/edit', 'AppointmentController@edit')->name('edit');
         Route::delete('{appointment}', 'AppointmentController@destroy')->name('destroy');
     });
+
+    Route::group([ 'as' => 'report.', 'prefix' => 'report' ], function () {
+        Route::post('appointment', 'ReportController@appointment')->name('appointment');
+        Route::get('appointment', 'ReportController@appointment')->name('appointment');
+    });
 });

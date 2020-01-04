@@ -55,7 +55,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-location-on',
             'title' => 'Branches',
             'items' => [
                 [
@@ -72,7 +72,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-assignment-ind',
             'title' => 'Clients',
             'items' => [
                 [
@@ -89,7 +89,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-face-unlock',
             'title' => 'Employees',
             'items' => [
                 [
@@ -106,7 +106,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-redeem',
             'title' => 'Services',
             'items' => [
                 [
@@ -123,7 +123,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-perm-identity',
             'title' => 'Users',
             'items' => [
                 [
@@ -140,7 +140,7 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => 'gui-folder',
             'route' => 'javascript:void(0);',
-            'icon'  => 'md md-people',
+            'icon'  => 'md md-receipt',
             'title' => 'Appointment',
             'items' => [
                 [
@@ -150,6 +150,19 @@ class BackendMenuCreator
                 [
                     'route' => route('appointment.create'),
                     'title' => 'Create'
+                ]
+            ]
+        ]);
+
+        array_push($menu, [
+            'class' => 'gui-folder',
+            'route' => 'javascript:void(0);',
+            'icon'  => 'md md-report',
+            'title' => 'Reports',
+            'items' => [
+                [
+                    'route' => route('report.appointment'),
+                    'title' => 'Appointment'
                 ]
             ]
         ]);
