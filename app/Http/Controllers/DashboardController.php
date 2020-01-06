@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Employee;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +24,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $employees = Employee::all();
+
+        return view('dashboard', compact('employees'));
     }
 }

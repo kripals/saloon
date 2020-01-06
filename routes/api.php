@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('report/appointment', 'ReportController@appointmentList')->name('report.appointment.list');
+Route::post('report/appointment/list', 'ReportController@appointmentList')->name('report.appointment.list');

@@ -28,13 +28,13 @@
                             <div class="form-group">
                                 <div class="input-datetime input-group" id="date-range">
                                     <div class="input-group-content">
-                                        {{ Form::text('start_date', null,['class'=>'form-control date-picker','placeholder'=>'Select a date','id'=>'start_date']) }}
+                                        {{ Form::text('start_date',  old('start_date'),['class'=>'form-control date-picker','placeholder'=>'Select a date','id'=>'start_date']) }}
                                         <p class="help-block">yyyy-mm-dd</p>
                                         <div class="form-control-line"></div>
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="input-group-content">
-                                        {{ Form::text('end_date', null,['class'=>'form-control date-picker','placeholder'=>'Select a date','id'=>'end_date']) }}
+                                        {{ Form::text('end_date',  old('end_date'),['class'=>'form-control date-picker','placeholder'=>'Select a date','id'=>'end_date']) }}
                                         <p class="help-block">yyyy-mm-dd</p>
                                         <div class="form-control-line"></div>
                                     </div>
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <div class="checkbox checkbox-inline checkbox-styled">
                                     <label>
-                                        {{ Form::checkbox('all', 1, old('all'), ['id'=>'all-date']) }}
+                                        {{ Form::checkbox('all', 1, old('all'), ['id'=>'all']) }}
                                         All
                                     </label>
                                 </div>
@@ -64,53 +64,4 @@
             {{ Form::close() }}
         </div>
     </section>
-
-
-    <section>
-        <div class="section-body">
-            <div class="card">
-                <div class="card-head">
-                    <header class="text-capitalize">appointment report</header>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="dt_appointment_report"
-                               class="table order-column hover"
-                               data-source="{{ route('report.appointment.list', [
-                                                    'search_key'    => $request->search_key,
-                                                    'search_value'  => $request->search_value,
-                                                    'sdate'         => $request->start_date ?: 0,
-                                                    'edate'         => $request->end_date ?: 0,
-                                                    'all'           => $request->all ?: 0,
-                                            ]) }}">
-                            <thead>
-                            <tr>
-                                <th>CLIENT NAME</th>
-                                <th>EMPLOYEE</th>
-                                <th>SERVICE</th>
-                                <th>DATE</th>
-                                <th>TIME</th>
-                                <th>DURATION</th>
-                                <th>BRANCH</th>
-                            </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 @stop
-
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('material/css/libs/DataTables/jquery.dataTables.css') }}">
-    <link rel="stylesheet" href="{{ asset('material/css/libs/DataTables/TableTools.css') }}"/>
-@endpush
-
-@push('scripts')
-    <script src="{{ asset('material/js/libs/jquery-validation/dist/jquery.validate.js') }}"></script>
-    <script src="{{ asset('material/js/libs/jquery-validation/dist/additional-methods.js') }}"></script>
-    <script src="{{ asset('material/js/libs/DataTables/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('js/pages/dt_appointment_report.js') }}"></script>
-@endpush

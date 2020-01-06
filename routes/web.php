@@ -71,7 +71,7 @@ Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
     });
 
     Route::group([ 'as' => 'report.', 'prefix' => 'report' ], function () {
-        Route::post('appointment', 'ReportController@appointment')->name('appointment');
-        Route::get('appointment', 'ReportController@appointment')->name('appointment');
+        Route::get('appointment/search', 'ReportController@appointmentSearch')->name('appointment.search');
+        Route::post('appointment', 'ReportController@appointmentIndex')->name('appointment');
     });
 });

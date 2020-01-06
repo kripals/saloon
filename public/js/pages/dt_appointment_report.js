@@ -63,7 +63,7 @@
             },
             "lengthMenu": [[50, 100, -1], [50, 100, "All"]],
             "pageLength": "50",
-            "order": [[1, "desc"]],
+            "order": [ ],
             "columns": [
                 {
                     "data": "client_name",

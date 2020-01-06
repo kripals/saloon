@@ -7,7 +7,7 @@
                 <li class="header-nav-brand">
                     <div class="brand-holder">
                         <a href="{{ url('/') }}">
-                            <span class="text-lg text-bold text-primary">Hair & Shanti</span>
+                            <span class="text-lg text-bold text-primary">{{ config('app.name') }}</span>
                         </a>
                     </div>
                 </li>
