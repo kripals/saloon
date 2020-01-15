@@ -161,7 +161,7 @@ class BackendMenuCreator
             'title' => 'Reports',
             'items' => [
                 [
-                    'route' => route('report.appointment'),
+                    'route' => route('report.appointment.search'),
                     'title' => 'Appointment'
                 ]
             ]

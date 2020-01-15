@@ -23,7 +23,8 @@ class Appointment extends Model
      * @var array
      */
     protected $appends = [
-        'appointment'
+        'appointment',
+        'amount'
     ];
 
     /**
@@ -36,6 +37,18 @@ class Appointment extends Model
         $date = new DateTime($this->date);
 
         return $date->format('M d, Y, H:i');
+    }
+
+    /**
+     * Append display name to JSON form
+     * @return string
+     * @throws \Exception
+     */
+    public function getAmountAttribute()
+    {
+        $amount = $this->service->sum('price');
+
+        return $amount;
     }
 
     /**

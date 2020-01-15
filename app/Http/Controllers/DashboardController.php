@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Appointment;
+use App\Model\Client;
 use App\Model\Employee;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class DashboardController extends Controller
 {
@@ -24,8 +28,26 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
+        $old_employee_count = Employee::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '<', date('Y-m-d'))->count();
+        $new_employee_count = Employee::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '>=', date('Y-m-d'))->count();
 
-        return view('dashboard', compact('employees'));
+        $old_appointment_count = Appointment::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '<', date('Y-m-d'))->count();
+        $new_appointment_count = Appointment::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '>=', date('Y-m-d'))->count();
+
+        $old_client_count = Client::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '<', date('Y-m-d'))->count();
+        $new_client_count = Client::where('branch_id', auth()->user()->branch_id)->whereDate('created_at', '>=', date('Y-m-d'))->count();
+
+        $today_date  = Carbon::create();
+        $weekly_date = Carbon::create()->subDays(8);
+
+        $appointments = Appointment::where('date', date('Y-m-d'))->get();
+
+        while ($weekly_date <= $today_date)
+        {
+            $weekly_date->addDay();
+            $appointment_price[] = Appointment::whereDate('date', '=', $weekly_date)->get()->sum('amount');
+        }
+
+        return view('dashboard', compact('new_employee_count', 'old_employee_count', 'old_appointment_count', 'new_appointment_count', 'old_client_count', 'new_client_count', 'appointment_price', 'appointments'));
     }
 }

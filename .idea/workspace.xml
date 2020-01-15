@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cff7b53-b8dc-4c89-b5de-b6b6d45175a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/saloon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/saloon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/dt_appointment_report.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/dt_appointment_report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ViewCreators/BackendMenuCreator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/appointment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/appointmentSearch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +130,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UyW0JsELl4ggKBzrMsN5w0zoEn" />
@@ -199,7 +204,13 @@
       <workItem from="1577850630550" duration="838000" />
       <workItem from="1577974144914" duration="6502000" />
       <workItem from="1578055232982" duration="22346000" />
-      <workItem from="1578328119063" duration="459000" />
+      <workItem from="1578328119063" duration="1207000" />
+      <workItem from="1578365939650" duration="3199000" />
+      <workItem from="1578456258279" duration="2948000" />
+      <workItem from="1578502284326" duration="32000" />
+      <workItem from="1578542698147" duration="612000" />
+      <workItem from="1578586128120" duration="9219000" />
+      <workItem from="1578612273712" duration="11000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,7 @@
     <!-- BEGIN LOGIN SECTION -->
     <section class="section-account">
         <div class="row col-md-12 logo" align="center">
-            <img src="{{asset('logo.jpg')}}" alt="logo" height="200">
+            <img src="{{asset('images/logo.jpg')}}" alt="logo" height="200">
         </div>
         <div class="row col-md-12" align="center">
             <div class="card col-sm-4 col-sm-offset-4 ">
