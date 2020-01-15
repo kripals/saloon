@@ -28,7 +28,6 @@ class ReportController extends Controller
      */
     public function appointmentIndex(Request $request)
     {
-        dd($request->all());
         return view('report.appointmentIndex', compact('request'));
     }
 
