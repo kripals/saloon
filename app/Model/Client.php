@@ -34,7 +34,7 @@ class Client extends Model
      */
     public function getNameAttribute()
     {
-        return ucwords($this->first_name) . ' ' . ucwords($this->last_name);
+        return ucwords($this->first_name) . ' ' . ucwords($this->last_name) . ' (' . $this->mobile_number . ')';
     }
 
     /**
