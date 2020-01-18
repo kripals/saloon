@@ -15,7 +15,7 @@ class AddGenderColumnClientsTable extends Migration
     {
         Schema::table('clients', function ($table)
         {
-            $table->integer('notification_days')->default(7)->after('currency');
+            $table->enum('gender', ['MALE', 'FEMALE'])->default('MALE')->after('last_name');
         });
     }
 

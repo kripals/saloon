@@ -13,6 +13,7 @@ class Client extends Model
         'id',
         'first_name',
         'last_name',
+        'gender',
         'mobile_number',
         'address',
         'branch_id'

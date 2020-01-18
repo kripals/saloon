@@ -70,7 +70,7 @@
             <div class="card-actionbar">
                 <div class="card-actionbar-row">
                     <button type="reset" class="btn btn-default ink-reaction">Reset</button>
-                    <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Save">
+                    <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Submit">
                 </div>
             </div>
         </div>

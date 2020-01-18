@@ -22,6 +22,7 @@
                             <th width="5%">#</th>
                             <th width="20%" class="text-left">First Name</th>
                             <th width="20%" class="text-left">Last Name</th>
+                            <th width="20%" class="text-left">Gender</th>
                             <th width="20%" class="text-left">Mobile Number</th>
                             <th width="20%" class="text-left">Address</th>
                         </tr>
@@ -32,6 +33,7 @@
                                 <td>{{++$key}}</td>
                                 <td>{{ strtoupper($client->first_name) }}</td>
                                 <td>{{ $client->last_name }}</td>
+                                <td>{{ $client->gender }}</td>
                                 <td>{{ $client->mobile_number }}</td>
                                 <td>{{ $client->address }}</td>
                                 <td class="text-right">

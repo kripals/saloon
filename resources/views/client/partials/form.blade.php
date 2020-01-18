@@ -30,7 +30,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{ Form::select('gender', [ 'MALE' => 'Male', 'FEMALE' => 'Female' ], old('gender'), ['class' => 'form-control', 'required']) }}
+                            {{ Form::label('gender', 'Gender') }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="form-group">
                             {{ Form::text('mobile_number',old('mobile_number'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('mobile_number','Mobile Number') }}
@@ -68,7 +74,7 @@
             <div class="card-actionbar">
                 <div class="card-actionbar-row">
                     <button type="reset" class="btn btn-default ink-reaction">Reset</button>
-                    <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Save">
+                    <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Submit">
                 </div>
             </div>
         </div>

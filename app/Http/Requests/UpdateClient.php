@@ -26,6 +26,7 @@ class UpdateClient extends FormRequest
         return [
             "first_name"    => 'required',
             "last_name"     => 'required',
+            "gender"        => 'required',
             "mobile_number" => 'required',
             "address"       => 'required'
         ];
@@ -39,6 +40,7 @@ class UpdateClient extends FormRequest
         return $data = [
             'first_name'    => $this->get('first_name'),
             'last_name'     => $this->get('last_name'),
+            'gender'        => $this->get('gender'),
             'mobile_number' => $this->get('mobile_number'),
             'address'       => $this->get('address'),
             'branch_id'     => auth()->user()->branch_id
