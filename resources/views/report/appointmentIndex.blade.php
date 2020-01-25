@@ -18,7 +18,8 @@
                                                     'edate'         => $request->end_date ?: 0,
                                                     'all'           => $request->all ?: 0,
                                                     'search_key'    => $request->search_key,
-                                                    'search_value'  => $request->search_value
+                                                    'search_value'  => $request->search_value,
+                                                    'user_branch' => auth()->user()->branch_id
                                             ]) }}">
                             <thead>
                             <tr>
@@ -48,6 +49,5 @@
 @push('scripts')
     <script src="{{ asset('material/js/libs/jquery-validation/dist/jquery.validate.js') }}"></script>
     <script src="{{ asset('material/js/libs/jquery-validation/dist/additional-methods.js') }}"></script>
-    <script src="{{ asset('material/js/libs/DataTables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/pages/dt_appointment_report.js') }}"></script>
 @endpush

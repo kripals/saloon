@@ -3,29 +3,36 @@
 /*
 * Collection for service expiry report
 */
-function appointmentReportCollection($sdate = 0, $edate = 0, $all = 0, $search = null, $value = null)
+function appointmentReportCollection($sdate = 0, $edate = 0, $all = 0, $search = null, $value = null, $user_branch = 1)
 {
-    if (!is_null($value))
+    if ( ! is_null($value))
     {
-        if ($all == 0)
+        if ($all == 1)
         {
-            $appointment = \App\Model\Appointment::where('branch_id', auth()->user()->branch_id)
-                ->whereHas($search, function ($q) use ($value) {
+            $appointment = \App\Model\Appointment::where('branch_id', $user_branch)->whereHas($search, function ($q) use ($value) {
                 $q->get()->where('name', 'like', $value);
             })->get();
-        } else {
-            $appointment = \App\Model\Appointment::where('branch_id', auth()->user()->branch_id)
-                ->whereBetween('date', [ $sdate, $edate ])->get();
+        }
+        else
+        {
+            $appointment = \App\Model\Appointment::where('branch_id', $user_branch)->whereBetween('date', [
+                $sdate,
+                $edate
+            ])->get();
         }
     }
     else
     {
-        if ($all == 0)
+        if ($all == 1)
         {
-            $appointment = \App\Model\Appointment::where('branch_id', auth()->user()->branch_id)->get();
-        } else {
-            $appointment = \App\Model\Appointment::where('branch_id', auth()->user()->branch_id)
-                ->whereBetween('date', [ $sdate, $edate ])->get();
+            $appointment = \App\Model\Appointment::where('branch_id', $user_branch)->get();
+        }
+        else
+        {
+            $appointment = \App\Model\Appointment::where('branch_id', $user_branch)->whereBetween('date', [
+                $sdate,
+                $edate
+            ])->get();
         }
     }
 
