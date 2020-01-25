@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateClient;
 use App\Model\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 class ClientController extends Controller
 {
@@ -92,5 +93,17 @@ class ClientController extends Controller
         $client->delete();
 
         return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'Client' ]));
+    }
+
+    public function clientList($user_branch = 1)
+    {
+        return DataTables::of(Client::where('branch_id', $user_branch)->get()->flatten())
+            ->addColumn('actions', function ($item)
+            {
+                $actions = '<a role="button" class="btn btn-xs btn-flat btn-primary"  href="' . route('client.edit', $item->id) . '" target="_blank">Edit</a>';
+                $actions .= '<a role="button" class="btn btn-xs btn-flat btn-primary" href="' . route('client.destroy', $item->id) . '" target="_blank">DELETE</a>';
+
+                return $actions;
+            })->make(true);
     }
 }
