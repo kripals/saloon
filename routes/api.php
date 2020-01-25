@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('report/appointment/list', 'ReportController@appointmentList')->name('report.appointment.list');
 Route::post('client/list', 'ClientController@clientList')->name('client.list');
+Route::post('employee/list', 'EmployeeController@employeeList')->name('employee.list');

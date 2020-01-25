@@ -95,13 +95,17 @@ class ClientController extends Controller
         return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'Client' ]));
     }
 
+    /**
+     * @param int $user_branch
+     * @return mixed
+     */
     public function clientList($user_branch = 1)
     {
         return DataTables::of(Client::where('branch_id', $user_branch)->get()->flatten())
             ->addColumn('actions', function ($item)
             {
                 $actions = '<a role="button" class="btn btn-xs btn-flat btn-primary"  href="' . route('client.edit', $item->id) . '" target="_blank">Edit</a>';
-                $actions .= '<a role="button" class="btn btn-xs btn-flat btn-primary" href="' . route('client.destroy', $item->id) . '" target="_blank">DELETE</a>';
+                $actions .= '<a role="button" class="btn btn-xs btn-flat btn-primary item-delete" href="' . route('client.destroy', $item->id) . '" target="_blank">DELETE</a>';
 
                 return $actions;
             })->make(true);

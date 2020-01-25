@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateEmployee;
 use App\Model\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 class EmployeeController extends Controller
 {
@@ -92,5 +93,21 @@ class EmployeeController extends Controller
         $employee->delete();
 
         return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'Employee' ]));
+    }
+
+    /**
+     * @param int $user_branch
+     * @return mixed
+     */
+    public function employeeList($user_branch = 1)
+    {
+        return DataTables::of(Employee::where('branch_id', $user_branch)->get()->flatten())
+            ->addColumn('actions', function ($item)
+            {
+                $actions = '<a role="button" class="btn btn-xs btn-flat btn-primary"  href="' . route('employee.edit', $item->id) . '" target="_blank">Edit</a>';
+                $actions .= '<a role="button" class="btn btn-xs btn-flat btn-primary item-delete" href="' . route('employee.destroy', $item->id) . '" target="_blank">DELETE</a>';
+
+                return $actions;
+            })->make(true);
     }
 }
