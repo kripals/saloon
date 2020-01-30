@@ -42,20 +42,15 @@ class ReportController extends Controller
      */
     public function appointmentList($sdate = null, $edate = null, $all = 1, $search_key = null, $search_value = null, $user_branch = 1)
     {
-        return DataTables::of(appointmentReportCollection($sdate, $edate, $all, $search_key, $search_value, $user_branch)->flatten())
-            ->addColumn('client_name', function($item)
-            {
+        return DataTables::of(appointmentReportCollection($sdate, $edate, $all, $search_key, $search_value, $user_branch)->flatten())->addColumn('client_name', function ($item) {
                 return $item->client->name;
-            })->addColumn('branch', function($item)
-            {
+            })->addColumn('branch', function ($item) {
                 return $item->branch->location;
-            })->addColumn('employee', function($item)
-            {
+            })->addColumn('employee', function ($item) {
                 return $item->employee->name;
-            })->addColumn('service', function($item)
-            {
-                $services =  $item->service;
-                $return = '';
+            })->addColumn('service', function ($item) {
+                $services = $item->service;
+                $return   = '';
 
                 foreach ($services as $service)
                 {

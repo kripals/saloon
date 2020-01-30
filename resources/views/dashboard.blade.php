@@ -192,17 +192,18 @@
     {{--    <script src="https://code.highcharts.com/modules/accessibility.js"></script>--}}
 
     <script type="text/javascript">
-        var amount = "{{ json_encode($appointment_price) }}";
+        var keys = [{{ implode(',', $appointment_keys) }}];
+        var amount = [{{ implode(',', $appointment_price) }}];
 
         Highcharts.chart('container', {
             title: {
                 text: 'Weekly Service'
             },
-            // subtitle: {
-            //     text: 'Source: itsolutionstuff.com.com'
-            // },
+            subtitle: {
+                text: 'Weekly Sales'
+            },
             xAxis: {
-                categories: ['Jan 10', 'Jan 11', 'Jan 12', 'Jan 13', 'Jan 14', 'Jan 15', 'Jan 16']
+                categories: keys
             },
             yAxis: {
                 title: {
@@ -216,15 +217,12 @@
             },
             plotOptions: {
                 series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    // pointStart: 2020-1-10
+                    allowPointSelect: true
                 }
             },
             series: [{
                 name: 'Amount',
-                data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+                data: amount
             }],
             responsive: {
                 rules: [{

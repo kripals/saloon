@@ -44,10 +44,13 @@ class DashboardController extends Controller
 
         while ($weekly_date <= $today_date)
         {
+            $price[ $weekly_date->format('d') ] = Appointment::whereDate('date', '=', $weekly_date)->get()->sum('amount');
             $weekly_date->addDay();
-            $appointment_price[] = Appointment::whereDate('date', '=', $weekly_date)->get()->sum('amount');
         }
 
-        return view('dashboard', compact('new_employee_count', 'old_employee_count', 'old_appointment_count', 'new_appointment_count', 'old_client_count', 'new_client_count', 'appointment_price', 'appointments'));
+        $appointment_price = array_values($price);
+        $appointment_keys  = array_keys($price);
+
+        return view('dashboard', compact('new_employee_count', 'old_employee_count', 'old_appointment_count', 'new_appointment_count', 'old_client_count', 'new_client_count', 'appointment_price', 'appointment_keys', 'appointment_dates', 'appointments'));
     }
 }
