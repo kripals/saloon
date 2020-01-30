@@ -17,6 +17,19 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                @if(isset($employee) && $employee->image)
+                                    <img src="{{ asset($employee->image->path) }}" data-src="{{ asset($employee->image->path) }}" class="preview" alt="avatar" width="200" height="200">
+                                @else
+                                    <img src="{{ asset(config('paths.placeholder.avatar')) }}" data-src="{{ asset(config('paths.placeholder.avatar')) }}" class="preview" alt="avatar" width="200" height="200">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             {{ Form::text('first_name',old('first_name'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('first_name','First Name') }}
@@ -62,6 +75,12 @@
                         <div class="form-group">
                             {{ Form::text('hired_date',old('hired_date'),['class'=>'form-control date-picker', 'required']) }}
                             {{ Form::label('hired_date','Hired Date') }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{ Form::file('image', ['class' => 'image-input', 'accept' => 'image/*', 'data-msg' => trans('validation.mimes', ['attribute' => 'avatar', 'values' => 'png, jpeg'])]) }}
+                            {{ Form::label('image', 'Avatar') }}
                         </div>
                     </div>
                 </div>

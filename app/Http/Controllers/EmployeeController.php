@@ -39,6 +39,8 @@ class EmployeeController extends Controller
             $data = $request->data();
 
             $employee = Employee::create($data);
+
+            $this->uploadRequestImage($request, $employee);
         });
 
         return redirect()->route('employee.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Employee' ]));
@@ -73,6 +75,8 @@ class EmployeeController extends Controller
                 $data = $request->data();
 
                 $employee->update($data);
+
+                $this->uploadRequestImage($request, $employee);
             });
 
             return redirect()->route('employee.index')->with('success', trans('messages.update_success', [ 'entity' => 'Employee' ]));

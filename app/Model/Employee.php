@@ -58,4 +58,12 @@ class Employee extends Model
     {
         return $this->belongsTo(Branch::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function image()
+    {
+        return $this->morphOne(Photo::class, 'imageable');
+    }
 }
