@@ -51,6 +51,6 @@ class DashboardController extends Controller
         $appointment_price = array_values($price);
         $appointment_keys  = array_keys($price);
 
-        return view('dashboard', compact('new_employee_count', 'old_employee_count', 'old_appointment_count', 'new_appointment_count', 'old_client_count', 'new_client_count', 'appointment_price', 'appointment_keys', 'appointment_dates', 'appointments'));
+        return view('dashboard', compact('new_employee_count', 'old_employee_count', 'old_appointment_count', 'new_appointment_count', 'old_client_count', 'new_client_count', 'appointment_price', 'appointment_keys', 'appointments'));
     }
 }
