@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            {{ Form::text('date', old('date'),['class'=>'form-control date-picker', 'required']) }}
+                            {{ Form::date('date', old('date'),['class'=>'form-control date-picker', 'required']) }}
                             {{ Form::label('date','Date') }}
                         </div>
                     </div>

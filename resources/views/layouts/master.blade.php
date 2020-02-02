@@ -77,13 +77,13 @@
 
 <script>
     $(document).ready(function () {
-        $(".date-picker").inputmask({
-            mask: "y-1-2",
-            placeholder: "yyyy-mm-dd",
-            leapday: "-02-29",
-            separator: "-",
-            alias: "yyyy-mm-dd"
-        });
+        // $(".date-picker").inputmask({
+        //     mask: "y-1-2",
+        //     placeholder: "yyyy-mm-dd",
+        //     leapday: "-02-29",
+        //     separator: "-",
+        //     alias: "yyyy-mm-dd"
+        // });
 
         $(".time-picker").inputmask({
             placeholder: "hh:mm",
