@@ -115,8 +115,7 @@
                                 @foreach($appointments as $appointment)
                                     <li class="tile">
                                         <div class="tile-content">
-                                            <div class="tile-icon">
-                                            </div>
+                                            <div class="tile-text" style="width: 49%">{{ $appointment->employee->name }}</div>
                                             <div class="tile-text">{{ $appointment->client->name }}</div>
                                         </div>
                                         <a class="btn btn-flat ink-reaction">
