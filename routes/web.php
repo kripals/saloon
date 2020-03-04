@@ -13,6 +13,9 @@
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout');
 
+Route::get('customer/appointment/create', 'AppointmentController@customerAppointmentIndex')->name('customer.appointment.create');
+Route::post('customer/appointment/store', 'AppointmentController@storeCustomerAppointment')->name('customer.appointment.store');
+
 Route::group([ 'prefix' => '/', 'middleware' => 'auth' ], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 

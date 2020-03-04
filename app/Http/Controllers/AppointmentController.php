@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointment;
+use App\Http\Requests\StoreCustomerAppointment;
 use App\Http\Requests\UpdateAppointment;
 use App\Model\Appointment;
+use App\Model\Branch;
 use App\Model\Employee;
 use App\Model\Service;
 use App\Model\Client;
@@ -13,6 +15,33 @@ use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function customerAppointmentIndex()
+    {
+        $branch   = Branch::pluck('location', 'id');
+        $services = Service::pluck('name', 'id');
+
+        return view('appointment.customer_form', compact('services', 'branch'));
+    }
+
+    /**
+     * @param StoreAppointment $request
+     * @return mixed
+     */
+    public function storeCustomerAppointment(StoreCustomerAppointment $request)
+    {
+        DB::transaction(function () use ($request) {
+            $client = Client::create($request->clientData());
+
+            $appointment = Appointment::create($request->appointmentData($client->id));
+            $appointment->service()->sync($request->service);
+        });
+
+        return redirect()->route('customer.appointment.create')->with('success', trans('messages.create_success', [ 'entity' => 'Appointment' ]));
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

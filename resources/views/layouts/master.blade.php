@@ -17,6 +17,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('material/css/materialadmin.css') }}"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('material/css/font-awesome.min.css') }}"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('material/css/material-design-iconic-font.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <link type="text/css" rel="stylesheet"
           href="{{ asset('material/css/material-design-iconic-font.min.css') }}"/>
     <link href="{{ asset('material/css/libs/select2/select2.css') }}" rel="stylesheet">
@@ -74,7 +75,7 @@
 <script src="{{ asset('material/js/core/demo/DemoLayouts.js') }}"></script>
 <script src="{{ asset('material/js/libs/inputmask/jquery.inputmask.bundle.min.js') }}"></script>
 <script src="{{ asset('material/js/libs/select2/select2.min.js') }}"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 <script>
     $(document).ready(function () {
         // $(".date-picker").inputmask({

@@ -17,7 +17,7 @@ class CreateAppointmentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('client_id')->unsigned()->index();
-            $table->integer('employee_id')->unsigned()->index();
+            $table->integer('employee_id')->unsigned()->index()->nullable();
             $table->date('date');
             $table->time('time');
             $table->integer('duration');
